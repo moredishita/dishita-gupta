@@ -73,8 +73,8 @@ class Bank:
     def withdraw_money(self):
         accno = input("enter the acc number:")
         pin = int(input("enter your pin:"))
-        user_data = [i for i in Bank.data if i['account no.'] == accno and i['pin'] == pin]
-        print(user)
+        user_data = [i for i in Bank.data if i["account no."] == accno and i["pin"] == pin]
+        print(user_data)
         
         if not user_data:
             print("user not found")
@@ -95,7 +95,7 @@ class Bank:
     def details(self):
         accno = input("enter the acc number:")
         pin = int(input("enter your pin:"))
-        user_data = [i for i in Bank.data if i['account no.'] == accno and i['pin'] == pin]
+        user_data = [i for i in Bank.data if i["account no."] == accno and i["pin"] == pin]
         
         if not user_data:
             print("user not found")
@@ -106,7 +106,7 @@ class Bank:
     def update_details(self):
         accno = input("enter the acc number:")
         pin = int(input("enter your pin:"))
-        user_data = [i for i in Bank.data if i['account no.'] == accno and i['pin'] == pin]
+        user_data = [i for i in Bank.data if i["account no."] == accno and i["pin"] == pin]
         if not user_data:
             print("user not found")
         else:
@@ -148,18 +148,20 @@ class Bank:
     def delete_account(self):
         accno = input("enter the acc number:")
         pin = int(input("enter your pin:"))
-        user_data = [i for i in Bank.data if i['account no.'] == accno and i['pin'] == pin]
+        user_data = [i for i in Bank.data if i["account no."] == accno and i["pin"] == pin]
         
         if not user_data:
             print("user not found")
         else:
             for i in Bank.data:
-                if i['account no.'] == accno and i['pin'] == pin:
+                if i["account no."] == accno and i["pin"] == pin:
                     Bank.data.remove(i)
             Bank.__update()
             print("data deleted")
 
-        
+
+print(Bank.data)
+
 
 user = Bank()
 print("press 1 for creating an account")
