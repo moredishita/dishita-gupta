@@ -52,7 +52,7 @@ class Bank:
     def deposite_money(self):
         accno = input("enter the acc number:")
         pin = int(input("enter your pin:"))
-        user_data = [i for i in Bank.data if i['account no.'] == accno and i['pin'] == pin]
+        user_data = [i for i in Bank.data if i["account no."] == accno and i["pin"] == pin]
         print(user_data)
         
         if not user_data:
